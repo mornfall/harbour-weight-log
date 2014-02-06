@@ -6,7 +6,6 @@ Group:         Qt/Qt
 License:       LICENSE
 URL:           http://example.org/
 Source0:       %{name}-%{version}.tar.bz2
-Source100:     harbour-weight-log.yaml
 Requires:      sailfishsilica-qt5 >= 0.10.9
 BuildRequires: pkgconfig(sailfishapp) >= 0.0.10
 BuildRequires: pkgconfig(Qt5Core), pkgconfig(Qt5Qml), pkgconfig(Qt5Quick)
