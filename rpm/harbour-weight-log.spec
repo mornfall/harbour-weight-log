@@ -1,12 +1,14 @@
 Name:          harbour-weight-log
 Summary:       Weight Log
-Version:       0.1
+Version:       0.2
 Release:       1
 Group:         Qt/Qt
 License:       LICENSE
 URL:           http://example.org/
 Source0:       %{name}-%{version}.tar.bz2
 Requires:      sailfishsilica-qt5 >= 0.10.9
+BuildRequires: gcc-c++
+BuildRequires: mesa-llvmpipe-libGLESv2-devel
 BuildRequires: pkgconfig(sailfishapp) >= 0.0.10
 BuildRequires: pkgconfig(Qt5Core), pkgconfig(Qt5Qml), pkgconfig(Qt5Quick)
 BuildRequires: desktop-file-utils
@@ -41,7 +43,7 @@ desktop-file-install --delete-original                \
 %files
 %defattr(-,root,root,-)
 %{_datadir}/icons/hicolor/86x86/apps
-%{_datadir}share/applications
+%{_datadir}/applications
 %{_datadir}/harbour-weight-log
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
