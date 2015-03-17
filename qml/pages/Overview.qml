@@ -56,7 +56,7 @@ Page {
         ctx.save();
         ctx.clearRect(0, 0, plot.width, plot.height);
 
-        ctx.beginPath(); ctx.strokeStyle = ctx.fillStyle = "gray";
+        ctx.beginPath(); ctx.strokeStyle = ctx.fillStyle = Theme.secondaryColor;
         for ( var y = ymin; y < ymax; ++y ) {
             moveTo( xmin, y ); lineTo( xmax, y );
         }
@@ -65,15 +65,15 @@ Page {
         for ( var y = ymin; y < ymax; ++y )
             ctx.fillText( y, xt(xmin), yt(y) - 5 );
 
-        ctx.beginPath(); ctx.strokeStyle = "green";
+        ctx.beginPath(); ctx.strokeStyle = Theme.highlightColor;
         run( function(d, w, a) { lineTo( d - start, w ); } );
         ctx.stroke();
 
-        ctx.beginPath(); ctx.strokeStyle = "red";
+        ctx.beginPath(); ctx.strokeStyle = Theme.primaryColor;
         run( function(d, w, a) { lineTo( d - start, a ); } );
         ctx.stroke();
 
-        ctx.fillStyle = "red";
+        ctx.fillStyle = Theme.primaryColor;
         run( function(d, w, a) {
             ctx.beginPath();
             circle( d - start, a, 5 );
