@@ -7,8 +7,8 @@ import "pages"
 ApplicationWindow
 {
     id: main
-    property int avg_month: 0
-    property int avg_week: 0
+    property double avg_month: 0
+    property double avg_week: 0
 
     initialPage: Component { Overview { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
