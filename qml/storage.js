@@ -67,7 +67,7 @@ function withDB(cb) {
 function list(model) {
     withDB(
       function(tx) {
-        var res = tx.executeSql("select * from entries order by date;");
+        var res = tx.executeSql("select * from entries order by date desc;");
         for ( var i = 0; i < res.rows.length; i ++ ) {
             var r = res.rows.item(i);
             model.append({"date": fromDay(r.date),
@@ -86,7 +86,7 @@ function average(from, to) {
 
 function plot(from, to, cb) {
     return withDB( function(tx) {
-        var res = tx.executeSql("select * from entries where date >= ? and date <= ? order by date",
+        var res = tx.executeSql("select * from entries where date >= ? and date <= ? order by date asc",
                                 [from - 10, to]);
         var weight = res.rows.item(0).weight;
         var day = res.rows.item(0).date - 1;
