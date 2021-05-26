@@ -4,6 +4,15 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
+    id: appCover
+
+    Image {
+           source: "cover.png"
+           anchors.horizontalCenter: parent.horizontalCenter
+           width: parent.width
+           height: sourceSize.height * width / sourceSize.width
+       }
+
     Column {
         anchors.centerIn: parent
 
